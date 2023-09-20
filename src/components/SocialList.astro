@@ -9,22 +9,12 @@ const socialLinks = [
 	{
 		name: "mdi:github",
 		friendlyName: "Github",
-		link: "https://github.com/chrismwilliams/astro-cactus",
+		link: "https://github.com/Sz0x",
 	},
 	{
-		name: "mdi:mastodon",
-		friendlyName: "Mastodon",
-		link: "#",
-	},
-	{
-		name: "mdi:linkedin",
-		friendlyName: "LinkedIn",
-		link: "#",
-	},
-	{
-		name: "mdi:email",
-		friendlyName: "email",
-		link: "mailto:astro-cactus@chriswilliams.dev",
+		name: "mdi:twitter",
+		friendlyName: "Twitter",
+		link: "https://twitter.com/TweetXTrade",
 	},
 ];
 ---
@@ -34,14 +24,13 @@ const socialLinks = [
 	<ul class="flex flex-1 items-center gap-x-2 sm:flex-initial">
 		{
 			socialLinks.map(({ link, name, friendlyName }) => {
-				const isEmail = name.includes("email") || friendlyName.toLowerCase().includes("email");
 				return (
 					<li class="flex">
 						<a
 							class="inline-block p-1 sm:hover:text-link"
 							href={link}
 							target="_blank"
-							rel={`noopener noreferrer me ${isEmail ? "authn" : ""}`}
+							rel="noopener noreferrer me"
 						>
 							<Icon class="h-6 w-6" name={name} aria-hidden="true" focusable="false" />
 							<span class="sr-only">{friendlyName}</span>
